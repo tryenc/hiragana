@@ -12,8 +12,8 @@ import wo from "../audio/wo.mp3"
 export const rowO = [
   null,
   {
-    audioPath: o,
-    character: "お"
+    audioPath: wo,
+    character: "を"
   },
   {
     audioPath: ro,
@@ -48,7 +48,7 @@ export const rowO = [
     character: "こ"
   },
   {
-    audioPath: wo,
-    character: "を"
+    audioPath: o,
+    character: "お"
   }
 ]

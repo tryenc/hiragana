@@ -1,101 +1,102 @@
 import React from "react"
 import { Character } from "./Character"
+import { Cell, Header } from "./Cell"
 import { rowA, rowI, rowU, rowE, rowO } from "./row-configs/index"
 
 function App() {
   return (
-    <table>
+    <table className="container table-fixed border-collapse">
       <thead>
         <tr>
-          <th></th>
-          <th>N</th>
-          <th>W</th>
-          <th>R</th>
-          <th>Y</th>
-          <th>M</th>
-          <th>H</th>
-          <th>N</th>
-          <th>T</th>
-          <th>S</th>
-          <th>K</th>
-          <th>A</th>
+          <Header>N</Header>
+          <Header>W</Header>
+          <Header>R</Header>
+          <Header>Y</Header>
+          <Header>M</Header>
+          <Header>H</Header>
+          <Header>N</Header>
+          <Header>T</Header>
+          <Header>S</Header>
+          <Header>K</Header>
+          <Header></Header>
+          <Header></Header>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th>A</th>
           {rowA.map((letter, index) => {
             return letter !== null ? (
-              <td key={letter.character}>
+              <Cell key={letter.character}>
                 <Character
                   audioPath={letter.audioPath}
                   character={letter.character}
                 />
-              </td>
+              </Cell>
             ) : (
-              <td key={index}></td>
+              <Cell key={index}></Cell>
             )
           })}
+          <Header>A</Header>
         </tr>
         <tr>
-          <th>I</th>
           {rowI.map((letter, index) => {
             return letter !== null ? (
-              <td key={letter.character}>
+              <Cell key={letter.character}>
                 <Character
                   audioPath={letter.audioPath}
                   character={letter.character}
                 />
-              </td>
+              </Cell>
             ) : (
-              <td key={index}></td>
+              <Cell key={index}></Cell>
             )
           })}
+          <Header>I</Header>
         </tr>
         <tr>
-          <th>U</th>
           {rowU.map((letter, index) => {
             return letter !== null ? (
-              <td key={letter.character}>
+              <Cell key={letter.character}>
                 <Character
                   audioPath={letter.audioPath}
                   character={letter.character}
                 />
-              </td>
+              </Cell>
             ) : (
-              <td key={index}></td>
+              <Cell key={index}></Cell>
             )
           })}
+          <Header>U</Header>
         </tr>
         <tr>
-          <th>E</th>
           {rowE.map((letter, index) => {
             return letter !== null ? (
-              <td key={letter.character}>
+              <Cell key={letter.character}>
                 <Character
                   audioPath={letter.audioPath}
                   character={letter.character}
                 />
-              </td>
+              </Cell>
             ) : (
-              <td key={index}></td>
+              <Cell key={index}></Cell>
             )
           })}
+          <Header>E</Header>
         </tr>
         <tr>
-          <th>O</th>
           {rowO.map((letter, index) => {
             return letter !== null ? (
-              <td key={letter.character}>
+              <Cell key={letter.character}>
                 <Character
                   audioPath={letter.audioPath}
                   character={letter.character}
                 />
-              </td>
+              </Cell>
             ) : (
-              <td key={index}></td>
+              <Cell key={index}></Cell>
             )
           })}
+          <Header>O</Header>
         </tr>
       </tbody>
     </table>
