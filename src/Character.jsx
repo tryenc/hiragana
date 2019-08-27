@@ -15,7 +15,7 @@ export const Character = ({ audioPath, character }) => {
   return (
     <button
       className={classnames(
-        "bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-2 border border-gray-400 rounded shadow-md focus:outline-none",
+        "w-full h-full bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-2 border border-gray-400 rounded shadow-md focus:outline-none",
         { "shadow-none": playing }
       )}
       onClick={handleClick}
