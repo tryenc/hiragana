@@ -1,99 +1,34 @@
 import React from "react"
 import { Character } from "./Character"
-import { rowA, rowI, rowU, rowE, rowO } from "./row-configs/index"
+import { characters, firstSound, lastSound } from "./row-configs/index"
+
+const gridStyle = {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
+  gridTemplateRows: "1fr 1fr 1fr 1fr 1fr 1fr"
+}
 
 export function Table() {
   return (
-    <table className="w-screen h-screen table-fixed border-collapse">
-      <thead>
-        <tr>
-          {["N", "W", "R", "Y", "M", "H", "N", "T", "S", "K", null, null].map(
-            (letter, index) =>
-              Boolean(letter) ? (
-                <th key={letter}>{letter}</th>
-              ) : (
-                <th key={index}></th>
-              )
-          )}
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          {rowA.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>A</th>
-        </tr>
-        <tr>
-          {rowI.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>I</th>
-        </tr>
-        <tr>
-          {rowU.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>U</th>
-        </tr>
-        <tr>
-          {rowE.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>E</th>
-        </tr>
-        <tr>
-          {rowO.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>O</th>
-        </tr>
-      </tbody>
-    </table>
+    <div className="h-screen" style={gridStyle}>
+      {firstSound.map(letter => (
+        <div key={letter.character} style={letter.gridPosition}>
+          {letter.character}
+        </div>
+      ))}
+      {characters.map(letter => (
+        <Character
+          key={letter.character}
+          audioPath={letter.audioPath}
+          character={letter.character}
+          style={letter.gridPosition}
+        />
+      ))}
+      {lastSound.map(letter => (
+        <div key={letter.character} style={letter.gridPosition}>
+          {letter.character}
+        </div>
+      ))}
+    </div>
   )
 }

@@ -9,46 +9,57 @@ import so from "../audio/so.mp3"
 import ko from "../audio/ko.mp3"
 import wo from "../audio/wo.mp3"
 
+const rowIndex = 6
+
 export const rowO = [
-  null,
   {
     audioPath: wo,
-    character: "を"
+    character: "を",
+    gridPosition: { gridArea: `${rowIndex} / 2` }
   },
   {
     audioPath: ro,
-    character: "ろ"
+    character: "ろ",
+    gridPosition: { gridArea: `${rowIndex} / 3` }
   },
   {
     audioPath: yo,
-    character: "よ"
+    character: "よ",
+    gridPosition: { gridArea: `${rowIndex} / 4` }
   },
   {
     audioPath: mo,
-    character: "も"
+    character: "も",
+    gridPosition: { gridArea: `${rowIndex} / 5` }
   },
   {
     audioPath: ho,
-    character: "ほ"
+    character: "ほ",
+    gridPosition: { gridArea: `${rowIndex} / 6` }
   },
   {
     audioPath: no,
-    character: "の"
+    character: "の",
+    gridPosition: { gridArea: `${rowIndex} / 7` }
   },
   {
     audioPath: to,
-    character: "と"
+    character: "と",
+    gridPosition: { gridArea: `${rowIndex} / 8` }
   },
   {
     audioPath: so,
-    character: "そ"
+    character: "そ",
+    gridPosition: { gridArea: `${rowIndex} / 9` }
   },
   {
     audioPath: ko,
-    character: "こ"
+    character: "こ",
+    gridPosition: { gridArea: `${rowIndex} / 10` }
   },
   {
     audioPath: o,
-    character: "お"
+    character: "お",
+    gridPosition: { gridArea: `${rowIndex} / 11` }
   }
 ]

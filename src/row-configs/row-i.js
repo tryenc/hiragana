@@ -7,40 +7,47 @@ import shi from "../audio/shi.mp3"
 import ki from "../audio/ki.mp3"
 import i from "../audio/i.mp3"
 
+const rowIndex = 3
+
 export const rowI = [
-  null,
-  null,
   {
     audioPath: ri,
-    character: "り"
+    character: "り",
+    gridPosition: { gridArea: `${rowIndex} / 3` }
   },
-  null,
   {
     audioPath: mi,
-    character: "み"
+    character: "み",
+    gridPosition: { gridArea: `${rowIndex} / 5` }
   },
   {
     audioPath: hi,
-    character: "ひ"
+    character: "ひ",
+    gridPosition: { gridArea: `${rowIndex} / 6` }
   },
   {
     audioPath: ni,
-    character: "に"
+    character: "に",
+    gridPosition: { gridArea: `${rowIndex} / 7` }
   },
   {
     audioPath: chi,
-    character: "ち"
+    character: "ち",
+    gridPosition: { gridArea: `${rowIndex} / 8` }
   },
   {
     audioPath: shi,
-    character: "し"
+    character: "し",
+    gridPosition: { gridArea: `${rowIndex} / 9` }
   },
   {
     audioPath: ki,
-    character: "き"
+    character: "き",
+    gridPosition: { gridArea: `${rowIndex} / 10` }
   },
   {
     audioPath: i,
-    character: "い"
+    character: "い",
+    gridPosition: { gridArea: `${rowIndex} / 11` }
   }
 ]

@@ -7,40 +7,47 @@ import se from "../audio/se.mp3"
 import ke from "../audio/ke.mp3"
 import e from "../audio/e.mp3"
 
+const rowIndex = 5
+
 export const rowE = [
-  null,
-  null,
   {
     audioPath: re,
-    character: "れ"
+    character: "れ",
+    gridPosition: { gridArea: `${rowIndex} / 3` }
   },
-  null,
   {
     audioPath: me,
-    character: "め"
+    character: "め",
+    gridPosition: { gridArea: `${rowIndex} / 5` }
   },
   {
     audioPath: he,
-    character: "へ"
+    character: "へ",
+    gridPosition: { gridArea: `${rowIndex} / 6` }
   },
   {
     audioPath: ne,
-    character: "ね"
+    character: "ね",
+    gridPosition: { gridArea: `${rowIndex} / 7` }
   },
   {
     audioPath: te,
-    character: "て"
+    character: "て",
+    gridPosition: { gridArea: `${rowIndex} / 8` }
   },
   {
     audioPath: se,
-    character: "せ"
+    character: "せ",
+    gridPosition: { gridArea: `${rowIndex} / 9` }
   },
   {
     audioPath: ke,
-    character: "け"
+    character: "け",
+    gridPosition: { gridArea: `${rowIndex} / 10` }
   },
   {
     audioPath: e,
-    character: "え"
+    character: "え",
+    gridPosition: { gridArea: `${rowIndex} / 11` }
   }
 ]

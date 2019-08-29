@@ -10,49 +10,62 @@ import sa from "../audio/sa.mp3"
 import ka from "../audio/ka.mp3"
 import a from "../audio/a.mp3"
 
+const rowIndex = 2
+
 export const rowA = [
   {
     audioPath: n,
-    character: "ん"
+    character: "ん",
+    gridPosition: { gridArea: `${rowIndex} / 1` }
   },
   {
     audioPath: wa,
-    character: "わ"
+    character: "わ",
+    gridPosition: { gridArea: `${rowIndex} / 2` }
   },
   {
     audioPath: ra,
-    character: "ら"
+    character: "ら",
+    gridPosition: { gridArea: `${rowIndex} / 3` }
   },
   {
     audioPath: ya,
-    character: "や"
+    character: "や",
+    gridPosition: { gridArea: `${rowIndex} / 4` }
   },
   {
     audioPath: ma,
-    character: "ま"
+    character: "ま",
+    gridPosition: { gridArea: `${rowIndex} / 5` }
   },
   {
     audioPath: ha,
-    character: "は"
+    character: "は",
+    gridPosition: { gridArea: `${rowIndex} / 6` }
   },
   {
     audioPath: na,
-    character: "な"
+    character: "な",
+    gridPosition: { gridArea: `${rowIndex} / 7` }
   },
   {
     audioPath: ta,
-    character: "た"
+    character: "た",
+    gridPosition: { gridArea: `${rowIndex} / 8` }
   },
   {
     audioPath: sa,
-    character: "さ"
+    character: "さ",
+    gridPosition: { gridArea: `${rowIndex} / 9` }
   },
   {
     audioPath: ka,
-    character: "か"
+    character: "か",
+    gridPosition: { gridArea: `${rowIndex} / 10` }
   },
   {
     audioPath: a,
-    character: "あ"
+    character: "あ",
+    gridPosition: { gridArea: `${rowIndex} / 11` }
   }
 ]

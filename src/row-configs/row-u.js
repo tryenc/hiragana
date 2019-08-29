@@ -9,42 +9,49 @@ import ku from "../audio/ku.mp3"
 import u from "../audio/u.mp3"
 
 export const rowU = [
-  null,
-  null,
   {
     audioPath: ru,
-    character: "る"
+    character: "る",
+    gridPosition: { gridArea: "4 / 3" }
   },
   {
     audioPath: yu,
-    character: "ゆ"
+    character: "ゆ",
+    gridPosition: { gridArea: "4 / 4" }
   },
   {
     audioPath: mu,
-    character: "む"
+    character: "む",
+    gridPosition: { gridArea: "4 / 5" }
   },
   {
     audioPath: fu,
-    character: "ふ"
+    character: "ふ",
+    gridPosition: { gridArea: "4 / 6" }
   },
   {
     audioPath: nu,
-    character: "ぬ"
+    character: "ぬ",
+    gridPosition: { gridArea: "4 / 7" }
   },
   {
     audioPath: tsu,
-    character: "つ"
+    character: "つ",
+    gridPosition: { gridArea: "4 / 8" }
   },
   {
     audioPath: su,
-    character: "す"
+    character: "す",
+    gridPosition: { gridArea: "4 / 9" }
   },
   {
     audioPath: ku,
-    character: "く"
+    character: "く",
+    gridPosition: { gridArea: "4 / 10" }
   },
   {
     audioPath: u,
-    character: "う"
+    character: "う",
+    gridPosition: { gridArea: "4 / 11" }
   }
 ]
