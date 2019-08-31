@@ -9,7 +9,7 @@ export const Character = ({ audioPath, character, style: parentStyle }) => {
     pronunciation.play()
     setPlaying(true)
   }
-
+  // remove this event listener
   pronunciation.addEventListener("ended", () => setPlaying(false))
 
   return (

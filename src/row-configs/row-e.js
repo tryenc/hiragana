@@ -7,47 +7,87 @@ import se from "../audio/se.mp3"
 import ke from "../audio/ke.mp3"
 import e from "../audio/e.mp3"
 
-const rowIndex = 5
+const index = 5
 
 export const rowE = [
   {
     audioPath: re,
     character: "れ",
-    gridPosition: { gridArea: `${rowIndex} / 3` }
+    gridPosition: {
+      "landscape-primary": { gridArea: `${index} / 3` },
+      "portrait-primary": {
+        gridArea: `10 / ${index}`
+      }
+    }
   },
   {
     audioPath: me,
     character: "め",
-    gridPosition: { gridArea: `${rowIndex} / 5` }
+    gridPosition: {
+      "landscape-primary": { gridArea: `${index} / 5` },
+      "portrait-primary": {
+        gridArea: `8 / ${index}`
+      }
+    }
   },
   {
     audioPath: he,
     character: "へ",
-    gridPosition: { gridArea: `${rowIndex} / 6` }
+    gridPosition: {
+      "landscape-primary": { gridArea: `${index} / 6` },
+      "portrait-primary": {
+        gridArea: `7 / ${index}`
+      }
+    }
   },
   {
     audioPath: ne,
     character: "ね",
-    gridPosition: { gridArea: `${rowIndex} / 7` }
+    gridPosition: {
+      "landscape-primary": { gridArea: `${index} / 7` },
+      "portrait-primary": {
+        gridArea: `6 / ${index}`
+      }
+    }
   },
   {
     audioPath: te,
     character: "て",
-    gridPosition: { gridArea: `${rowIndex} / 8` }
+    gridPosition: {
+      "landscape-primary": { gridArea: `${index} / 8` },
+      "portrait-primary": {
+        gridArea: `5 / ${index}`
+      }
+    }
   },
   {
     audioPath: se,
     character: "せ",
-    gridPosition: { gridArea: `${rowIndex} / 9` }
+    gridPosition: {
+      "landscape-primary": { gridArea: `${index} / 9` },
+      "portrait-primary": {
+        gridArea: `4 / ${index}`
+      }
+    }
   },
   {
     audioPath: ke,
     character: "け",
-    gridPosition: { gridArea: `${rowIndex} / 10` }
+    gridPosition: {
+      "landscape-primary": { gridArea: `${index} / 10` },
+      "portrait-primary": {
+        gridArea: `3 / ${index}`
+      }
+    }
   },
   {
     audioPath: e,
     character: "え",
-    gridPosition: { gridArea: `${rowIndex} / 11` }
+    gridPosition: {
+      "landscape-primary": { gridArea: `${index} / 11` },
+      "portrait-primary": {
+        gridArea: `2 / ${index}`
+      }
+    }
   }
 ]

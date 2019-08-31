@@ -3,16 +3,27 @@ import { Character } from "./Character"
 import { characters, firstSound, lastSound } from "./row-configs/index"
 
 const gridStyle = {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
-  gridTemplateRows: "1fr 1fr 1fr 1fr 1fr 1fr"
+  "landscape-primary": {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
+    gridTemplateRows: "1fr 1fr 1fr 1fr 1fr 1fr"
+  },
+  "portrait-primary": {
+    display: "grid",
+    gridTemplateRows: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
+    gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr"
+  }
 }
 
-export function Table() {
+export function Table({ orientation }) {
   return (
-    <div className="h-screen" style={gridStyle}>
+    <div className="h-screen" style={gridStyle[orientation]}>
       {firstSound.map(letter => (
-        <div key={letter.character} style={letter.gridPosition}>
+        <div
+          className="flex items-center justify-center"
+          key={letter.character}
+          style={letter.gridPosition[orientation]}
+        >
           {letter.character}
         </div>
       ))}
@@ -21,11 +32,15 @@ export function Table() {
           key={letter.character}
           audioPath={letter.audioPath}
           character={letter.character}
-          style={letter.gridPosition}
+          style={letter.gridPosition[orientation]}
         />
       ))}
       {lastSound.map(letter => (
-        <div key={letter.character} style={letter.gridPosition}>
+        <div
+          className="flex items-center justify-center"
+          key={letter.character}
+          style={letter.gridPosition[orientation]}
+        >
           {letter.character}
         </div>
       ))}

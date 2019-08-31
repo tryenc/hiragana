@@ -1,46 +1,125 @@
+const index = 1
+
 export const firstSound = [
   {
     character: "N",
-    gridPosition: { gridArea: "1 / 1" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 1`
+      },
+      "portrait-primary": {
+        gridArea: `12 / ${index}`
+      }
+    }
   },
   {
     character: "W-",
-    gridPosition: { gridArea: "1 / 2" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 2`
+      },
+      "portrait-primary": {
+        gridArea: `11 / ${index}`
+      }
+    }
   },
   {
     character: "R-",
-    gridPosition: { gridArea: "1 / 3" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 3`
+      },
+      "portrait-primary": {
+        gridArea: `10 / ${index}`
+      }
+    }
   },
   {
     character: "Y-",
-    gridPosition: { gridArea: "1 / 4" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 4`
+      },
+      "portrait-primary": {
+        gridArea: `9 / ${index}`
+      }
+    }
   },
   {
     character: "M-",
-    gridPosition: { gridArea: "1 / 5" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 5`
+      },
+      "portrait-primary": {
+        gridArea: `8 / ${index}`
+      }
+    }
   },
   {
     character: "H-",
-    gridPosition: { gridArea: "1 / 6" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 6`
+      },
+      "portrait-primary": {
+        gridArea: `7 / ${index}`
+      }
+    }
   },
   {
     character: "N-",
-    gridPosition: { gridArea: "1 / 7" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 7`
+      },
+      "portrait-primary": {
+        gridArea: `6 / ${index}`
+      }
+    }
   },
   {
     character: "T-",
-    gridPosition: { gridArea: "1 / 8" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 8`
+      },
+      "portrait-primary": {
+        gridArea: `5 / ${index}`
+      }
+    }
   },
   {
     character: "S-",
-    gridPosition: { gridArea: "1 / 9" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 9`
+      },
+      "portrait-primary": {
+        gridArea: `4 / ${index}`
+      }
+    }
   },
   {
     character: "K-",
-    gridPosition: { gridArea: "1 / 10" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 10`
+      },
+      "portrait-primary": {
+        gridArea: `3 / ${index}`
+      }
+    }
   },
   {
     character: "∅-",
-    gridPosition: { gridArea: "1 / 11" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 11`
+      },
+      "portrait-primary": {
+        gridArea: `2 / ${index}`
+      }
+    }
   }
 ]

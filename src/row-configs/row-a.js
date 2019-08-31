@@ -10,62 +10,139 @@ import sa from "../audio/sa.mp3"
 import ka from "../audio/ka.mp3"
 import a from "../audio/a.mp3"
 
-const rowIndex = 2
+const index = 2
 
 export const rowA = [
   {
     audioPath: n,
     character: "ん",
-    gridPosition: { gridArea: `${rowIndex} / 1` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 1`
+      },
+      "portrait-primary": {
+        gridArea: `12 / ${index}`
+      }
+    }
   },
   {
     audioPath: wa,
     character: "わ",
-    gridPosition: { gridArea: `${rowIndex} / 2` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 2`
+      },
+      "portrait-primary": {
+        gridArea: `11 / ${index}`
+      }
+    }
   },
   {
     audioPath: ra,
     character: "ら",
-    gridPosition: { gridArea: `${rowIndex} / 3` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 3`
+      },
+      "portrait-primary": {
+        gridArea: `10 / ${index}`
+      }
+    }
   },
   {
     audioPath: ya,
     character: "や",
-    gridPosition: { gridArea: `${rowIndex} / 4` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 4`
+      },
+      "portrait-primary": {
+        gridArea: `9 / ${index}`
+      }
+    }
   },
   {
     audioPath: ma,
     character: "ま",
-    gridPosition: { gridArea: `${rowIndex} / 5` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 5`
+      },
+      "portrait-primary": {
+        gridArea: `8 / ${index}`
+      }
+    }
   },
   {
     audioPath: ha,
     character: "は",
-    gridPosition: { gridArea: `${rowIndex} / 6` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 6`
+      },
+      "portrait-primary": {
+        gridArea: `7 / ${index}`
+      }
+    }
   },
   {
     audioPath: na,
     character: "な",
-    gridPosition: { gridArea: `${rowIndex} / 7` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 7`
+      },
+      "portrait-primary": {
+        gridArea: `6 / ${index}`
+      }
+    }
   },
   {
     audioPath: ta,
     character: "た",
-    gridPosition: { gridArea: `${rowIndex} / 8` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 8`
+      },
+      "portrait-primary": {
+        gridArea: `5 / ${index}`
+      }
+    }
   },
   {
     audioPath: sa,
     character: "さ",
-    gridPosition: { gridArea: `${rowIndex} / 9` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 9`
+      },
+      "portrait-primary": {
+        gridArea: `4 / ${index}`
+      }
+    }
   },
   {
     audioPath: ka,
     character: "か",
-    gridPosition: { gridArea: `${rowIndex} / 10` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 10`
+      },
+      "portrait-primary": {
+        gridArea: `3 / ${index}`
+      }
+    }
   },
   {
     audioPath: a,
     character: "あ",
-    gridPosition: { gridArea: `${rowIndex} / 11` }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 11`
+      },
+      "portrait-primary": {
+        gridArea: `2 / ${index}`
+      }
+    }
   }
 ]

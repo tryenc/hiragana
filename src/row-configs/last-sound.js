@@ -1,22 +1,60 @@
+const colIndex = 12
+const rowIndex = 1
+
 export const lastSound = [
   {
     character: "-A",
-    gridPosition: { gridArea: "2 / 12" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `2 / ${colIndex}`
+      },
+      "portrait-primary": {
+        gridArea: `${rowIndex} / 2`
+      }
+    }
   },
   {
     character: "-I",
-    gridPosition: { gridArea: "3 / 12" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `3 / ${colIndex}`
+      },
+      "portrait-primary": {
+        gridArea: `${rowIndex} / 3`
+      }
+    }
   },
   {
     character: "-U",
-    gridPosition: { gridArea: "4 / 12" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `4 / ${colIndex}`
+      },
+      "portrait-primary": {
+        gridArea: `${rowIndex} / 4`
+      }
+    }
   },
   {
     character: "-E",
-    gridPosition: { gridArea: "5 / 12" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `5 / ${colIndex}`
+      },
+      "portrait-primary": {
+        gridArea: `${rowIndex} / 5`
+      }
+    }
   },
   {
     character: "-O",
-    gridPosition: { gridArea: "6 / 12" }
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `6 / ${colIndex}`
+      },
+      "portrait-primary": {
+        gridArea: `${rowIndex} / 6`
+      }
+    }
   }
 ]
