@@ -17,7 +17,7 @@ const gridStyle = {
 
 export function Table({ orientation }) {
   return (
-    <div className="h-screen" style={gridStyle[orientation]}>
+    <div className="h-full" style={gridStyle[orientation]}>
       {firstSound.map(letter => (
         <div
           className="flex items-center justify-center"

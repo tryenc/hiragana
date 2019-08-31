@@ -90,46 +90,75 @@ const guessStyle = [
   }
 ]
 
-const sixCharacters = characters.slice(0, 6)
-const soundCharacter = sixCharacters[0]
+function getRandomIndex(max) {
+  return Math.floor(Math.random() * Math.floor(max))
+}
+
+function getRandomCharacters(chars, qty) {
+  const randomChars = []
+
+  while (randomChars.length < qty) {
+    const index = getRandomIndex(chars.length)
+
+    const char = chars[index]
+
+    if (!randomChars.includes(char)) {
+      randomChars.push(char)
+    }
+  }
+
+  return randomChars
+}
 
 const Guess = withGuessingBehavior(Character)
 
 export function MatchSoundToCharacter({ orientation }) {
-  const [guessed, setGuessed] = useState([])
+  const [guessedChars, setGuessedChars] = useState([])
+  const [chars, setChars] = useState(getRandomCharacters(characters, 6))
+  const [correctAnswerIndex, setCorrectAnswerIndex] = useState(
+    getRandomIndex(6)
+  )
+
   function computeIsCorrect(guessed, guess) {
     if (
-      guessed.includes(guess.character) &&
-      guess.character === soundCharacter.character
+      guessed.includes(guess) &&
+      guess === chars[correctAnswerIndex].character
     ) {
       return true
     }
     if (
-      guessed.includes(guess.character) &&
-      guess.character !== soundCharacter.character
+      guessed.includes(guess) &&
+      guess !== chars[correctAnswerIndex].character
     ) {
       return false
     }
   }
 
   function handleClick(event) {
-    setGuessed([event.target.value, ...guessed])
+    setGuessedChars([event.target.value, ...guessedChars])
+    if (event.target.value === chars[correctAnswerIndex].character) {
+      setTimeout(() => {
+        setGuessedChars([])
+        setChars(getRandomCharacters(characters, 6))
+        setCorrectAnswerIndex(getRandomIndex(6))
+      }, 2000)
+    }
   }
 
   return (
-    <div className="h-screen" style={gridStyle[orientation]}>
+    <div className="h-full" style={gridStyle[orientation]}>
       <Character
-        audioPath={soundCharacter.audioPath}
-        character={soundCharacter.character}
+        audioPath={chars[correctAnswerIndex].audioPath}
+        character={chars[correctAnswerIndex].character}
         soundOnly={true}
         style={soundStyle.gridPosition[orientation]}
       />
-      {sixCharacters.map((letter, index) => {
+      {chars.map((letter, index) => {
         return (
           <Guess
             audioPath={letter.audioPath}
             character={letter.character}
-            isCorrect={computeIsCorrect(guessed, letter)}
+            isCorrect={computeIsCorrect(guessedChars, letter.character)}
             key={letter.character}
             onClick={handleClick}
             style={guessStyle[index].gridPosition[orientation]}
