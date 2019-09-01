@@ -4,6 +4,10 @@ module.exports = {
     {
       name: "Atoms",
       components: "src/atoms/**/*.{jsx,tsx}"
+    },
+    {
+      name: "Molecules",
+      components: "src/molecules/**/*.{jsx,tsx}"
     }
   ]
 }
