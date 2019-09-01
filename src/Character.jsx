@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import classnames from "classnames"
 
 const buttonClasses =
@@ -17,13 +17,16 @@ export const Character = ({
 
   function handleClick(e) {
     additionalClickHandlers(e)
+    play()
+  }
+
+  function play() {
+    pronunciation.addEventListener("ended", () => setPlaying(false), {
+      once: true // listener removes itself after being invoked
+    })
     pronunciation.play()
     setPlaying(true)
   }
-
-  pronunciation.addEventListener("ended", () => setPlaying(false), {
-    once: true // listener removes itself after being invoked
-  })
 
   return (
     <button
