@@ -1,26 +1,45 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import classnames from "classnames"
 
-export const Character = ({ audioPath, character }) => {
+const buttonClasses =
+  "m-2 bg-white text-gray-800 font-semibold py-2 px-2 border border-gray-400 rounded shadow-md focus:outline-none"
+
+export const Character = ({
+  onClick: additionalClickHandlers = () => {},
+  audioPath,
+  character,
+  className: parentClassName,
+  style: parentStyle,
+  soundOnly = false
+}) => {
   const [playing, setPlaying] = useState(false)
   const pronunciation = new Audio(audioPath)
 
-  function handleClick() {
+  function handleClick(e) {
+    additionalClickHandlers(e)
+    play()
+  }
+
+  function play() {
+    pronunciation.addEventListener("ended", () => setPlaying(false), {
+      once: true // listener removes itself after being invoked
+    })
     pronunciation.play()
     setPlaying(true)
   }
 
-  pronunciation.addEventListener("ended", () => setPlaying(false))
-
   return (
     <button
       className={classnames(
-        "w-full h-full bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-2 border border-gray-400 rounded shadow-md focus:outline-none",
-        { "shadow-none": playing }
+        buttonClasses,
+        { "shadow-none bg-gray-200": playing /* simulates button pressed */ },
+        parentClassName
       )}
+      style={parentStyle}
       onClick={handleClick}
+      value={character}
     >
-      {character}
+      {soundOnly ? "Play" : character}
     </button>
   )
 }

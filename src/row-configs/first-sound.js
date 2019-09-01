@@ -1,18 +1,30 @@
-import ri from "../audio/ri.mp3"
-import mi from "../audio/mi.mp3"
-import hi from "../audio/hi.mp3"
-import ni from "../audio/ni.mp3"
-import chi from "../audio/chi.mp3"
-import shi from "../audio/shi.mp3"
-import ki from "../audio/ki.mp3"
-import i from "../audio/i.mp3"
+const index = 1
 
-const index = 3
-
-export const rowI = [
+export const firstSound = [
   {
-    audioPath: ri,
-    character: "り",
+    character: "N",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 1`
+      },
+      "portrait-primary": {
+        gridArea: `12 / ${index}`
+      }
+    }
+  },
+  {
+    character: "W-",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 2`
+      },
+      "portrait-primary": {
+        gridArea: `11 / ${index}`
+      }
+    }
+  },
+  {
+    character: "R-",
     gridPosition: {
       "landscape-primary": {
         gridArea: `${index} / 3`
@@ -23,8 +35,18 @@ export const rowI = [
     }
   },
   {
-    audioPath: mi,
-    character: "み",
+    character: "Y-",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 4`
+      },
+      "portrait-primary": {
+        gridArea: `9 / ${index}`
+      }
+    }
+  },
+  {
+    character: "M-",
     gridPosition: {
       "landscape-primary": {
         gridArea: `${index} / 5`
@@ -35,8 +57,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: hi,
-    character: "ひ",
+    character: "H-",
     gridPosition: {
       "landscape-primary": {
         gridArea: `${index} / 6`
@@ -47,8 +68,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: ni,
-    character: "に",
+    character: "N-",
     gridPosition: {
       "landscape-primary": {
         gridArea: `${index} / 7`
@@ -59,8 +79,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: chi,
-    character: "ち",
+    character: "T-",
     gridPosition: {
       "landscape-primary": {
         gridArea: `${index} / 8`
@@ -71,8 +90,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: shi,
-    character: "し",
+    character: "S-",
     gridPosition: {
       "landscape-primary": {
         gridArea: `${index} / 9`
@@ -83,8 +101,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: ki,
-    character: "き",
+    character: "K-",
     gridPosition: {
       "landscape-primary": {
         gridArea: `${index} / 10`
@@ -95,8 +112,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: i,
-    character: "い",
+    character: "∅-",
     gridPosition: {
       "landscape-primary": {
         gridArea: `${index} / 11`

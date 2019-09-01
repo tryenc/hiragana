@@ -1,95 +1,27 @@
-import React from "react"
-import { Character } from "./Character"
-import { rowA, rowI, rowU, rowE, rowO } from "./row-configs/index"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import React, { Suspense, lazy } from "react"
 
-function App() {
+import { Header } from "./Header"
+
+const Table = lazy(() => import("./pages/Table"))
+const MatchSoundToCharacter = lazy(() =>
+  import("./pages/MatchSoundToCharacter")
+)
+
+const App = () => {
   return (
-    <table className="w-screen h-screen table-fixed border-collapse">
-      <thead>
-        <tr>
-          {["N", "W", "R", "Y", "M", "H", "N", "T", "S", "K", null, null].map(
-            letter => (Boolean(letter) ? <th>{letter}</th> : <th></th>)
-          )}
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          {rowA.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>A</th>
-        </tr>
-        <tr>
-          {rowI.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>I</th>
-        </tr>
-        <tr>
-          {rowU.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>U</th>
-        </tr>
-        <tr>
-          {rowE.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>E</th>
-        </tr>
-        <tr>
-          {rowO.map((letter, index) => {
-            return letter !== null ? (
-              <td className="p-2" key={letter.character}>
-                <Character
-                  audioPath={letter.audioPath}
-                  character={letter.character}
-                />
-              </td>
-            ) : (
-              <td key={index}></td>
-            )
-          })}
-          <th>O</th>
-        </tr>
-      </tbody>
-    </table>
+    <Router>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Table} />
+          <Route
+            path="/match-sound-to-character"
+            component={MatchSoundToCharacter}
+          />
+        </Switch>
+      </Suspense>
+    </Router>
   )
 }
 

@@ -9,46 +9,127 @@ import so from "../audio/so.mp3"
 import ko from "../audio/ko.mp3"
 import wo from "../audio/wo.mp3"
 
+const index = 6
+
 export const rowO = [
-  null,
   {
     audioPath: wo,
-    character: "を"
+    character: "を",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 2`
+      },
+      "portrait-primary": {
+        gridArea: `11 / ${index}`
+      }
+    }
   },
   {
     audioPath: ro,
-    character: "ろ"
+    character: "ろ",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 3`
+      },
+      "portrait-primary": {
+        gridArea: `10 / ${index}`
+      }
+    }
   },
   {
     audioPath: yo,
-    character: "よ"
+    character: "よ",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 4`
+      },
+      "portrait-primary": {
+        gridArea: `9 / ${index}`
+      }
+    }
   },
   {
     audioPath: mo,
-    character: "も"
+    character: "も",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 5`
+      },
+      "portrait-primary": {
+        gridArea: `8 / ${index}`
+      }
+    }
   },
   {
     audioPath: ho,
-    character: "ほ"
+    character: "ほ",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 6`
+      },
+      "portrait-primary": {
+        gridArea: `7 / ${index}`
+      }
+    }
   },
   {
     audioPath: no,
-    character: "の"
+    character: "の",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 7`
+      },
+      "portrait-primary": {
+        gridArea: `6 / ${index}`
+      }
+    }
   },
   {
     audioPath: to,
-    character: "と"
+    character: "と",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 8`
+      },
+      "portrait-primary": {
+        gridArea: `5 / ${index}`
+      }
+    }
   },
   {
     audioPath: so,
-    character: "そ"
+    character: "そ",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 9`
+      },
+      "portrait-primary": {
+        gridArea: `4 / ${index}`
+      }
+    }
   },
   {
     audioPath: ko,
-    character: "こ"
+    character: "こ",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 10`
+      },
+      "portrait-primary": {
+        gridArea: `3 / ${index}`
+      }
+    }
   },
   {
     audioPath: o,
-    character: "お"
+    character: "お",
+    gridPosition: {
+      "landscape-primary": {
+        gridArea: `${index} / 11`
+      },
+      "portrait-primary": {
+        gridArea: `2 / ${index}`
+      }
+    }
   }
 ]

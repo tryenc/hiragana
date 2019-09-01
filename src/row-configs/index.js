@@ -1,5 +1,10 @@
-export { rowA } from "./row-a"
-export { rowI } from "./row-i"
-export { rowU } from "./row-u"
-export { rowE } from "./row-e"
-export { rowO } from "./row-o"
+import { rowA } from "./row-a"
+import { rowI } from "./row-i"
+import { rowU } from "./row-u"
+import { rowE } from "./row-e"
+import { rowO } from "./row-o"
+import { firstSound } from "./first-sound"
+import { lastSound } from "./last-sound"
+
+export { firstSound, lastSound }
+export const characters = [...rowA, ...rowI, ...rowU, ...rowE, ...rowO]
