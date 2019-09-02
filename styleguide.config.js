@@ -7,7 +7,8 @@ module.exports = {
     },
     {
       name: "Molecules",
-      components: "src/molecules/**/*.{jsx,tsx}"
+      components: "src/molecules/**/*.{jsx,tsx}",
+      ignore: "src/molecules/**/*.demo.{jsx,tsx}"
     }
   ]
 }
