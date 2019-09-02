@@ -32,8 +32,8 @@ export const IncorrectExample = () => {
   function setGuessed(e) {
     _setGuessed([e.target.value, ...guessed])
   }
-  const value = "A"
-  const correctAnswer = "B"
+  const value = "と"
+  const correctAnswer = "あ"
 
   return (
     <PossibleCharacterAnswer
