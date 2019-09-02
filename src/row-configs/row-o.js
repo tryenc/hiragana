@@ -1,19 +1,19 @@
-import o from "../audio/o.mp3"
-import ro from "../audio/ro.mp3"
-import yo from "../audio/yo.mp3"
-import mo from "../audio/mo.mp3"
-import ho from "../audio/ho.mp3"
-import no from "../audio/no.mp3"
-import to from "../audio/to.mp3"
-import so from "../audio/so.mp3"
-import ko from "../audio/ko.mp3"
-import wo from "../audio/wo.mp3"
+import お from "../assets/pronunciation/お.mp3"
+import ろ from "../assets/pronunciation/ろ.mp3"
+import よ from "../assets/pronunciation/よ.mp3"
+import も from "../assets/pronunciation/も.mp3"
+import ほ from "../assets/pronunciation/ほ.mp3"
+import の from "../assets/pronunciation/の.mp3"
+import と from "../assets/pronunciation/と.mp3"
+import そ from "../assets/pronunciation/そ.mp3"
+import こ from "../assets/pronunciation/こ.mp3"
+import を from "../assets/pronunciation/を.mp3"
 
 const index = 6
 
 export const rowO = [
   {
-    audioPath: wo,
+    audioPath: を,
     character: "を",
     gridPosition: {
       "landscape-primary": {
@@ -25,7 +25,7 @@ export const rowO = [
     }
   },
   {
-    audioPath: ro,
+    audioPath: ろ,
     character: "ろ",
     gridPosition: {
       "landscape-primary": {
@@ -37,7 +37,7 @@ export const rowO = [
     }
   },
   {
-    audioPath: yo,
+    audioPath: よ,
     character: "よ",
     gridPosition: {
       "landscape-primary": {
@@ -49,7 +49,7 @@ export const rowO = [
     }
   },
   {
-    audioPath: mo,
+    audioPath: も,
     character: "も",
     gridPosition: {
       "landscape-primary": {
@@ -61,7 +61,7 @@ export const rowO = [
     }
   },
   {
-    audioPath: ho,
+    audioPath: ほ,
     character: "ほ",
     gridPosition: {
       "landscape-primary": {
@@ -73,7 +73,7 @@ export const rowO = [
     }
   },
   {
-    audioPath: no,
+    audioPath: の,
     character: "の",
     gridPosition: {
       "landscape-primary": {
@@ -85,7 +85,7 @@ export const rowO = [
     }
   },
   {
-    audioPath: to,
+    audioPath: と,
     character: "と",
     gridPosition: {
       "landscape-primary": {
@@ -97,7 +97,7 @@ export const rowO = [
     }
   },
   {
-    audioPath: so,
+    audioPath: そ,
     character: "そ",
     gridPosition: {
       "landscape-primary": {
@@ -109,7 +109,7 @@ export const rowO = [
     }
   },
   {
-    audioPath: ko,
+    audioPath: こ,
     character: "こ",
     gridPosition: {
       "landscape-primary": {
@@ -121,7 +121,7 @@ export const rowO = [
     }
   },
   {
-    audioPath: o,
+    audioPath: お,
     character: "お",
     gridPosition: {
       "landscape-primary": {

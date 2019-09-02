@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { PossibleAnswer } from "./PossibleAnswer"
+import { PossibleCharacterAnswer } from "./PossibleCharacterAnswer"
 
 function computeIsCorrect(correctAnswer, guessed, value) {
   if (guessed.includes(value)) {
@@ -15,11 +15,11 @@ export const CorrectExample = () => {
   function setGuessed(e) {
     _setGuessed([e.target.value, ...guessed])
   }
-  const value = "A"
-  const correctAnswer = "A"
+  const value = "あ"
+  const correctAnswer = "あ"
 
   return (
-    <PossibleAnswer
+    <PossibleCharacterAnswer
       isCorrect={computeIsCorrect(correctAnswer, guessed, value)}
       setGuessed={setGuessed}
       value={value}
@@ -36,7 +36,7 @@ export const IncorrectExample = () => {
   const correctAnswer = "B"
 
   return (
-    <PossibleAnswer
+    <PossibleCharacterAnswer
       isCorrect={computeIsCorrect(correctAnswer, guessed, value)}
       setGuessed={setGuessed}
       value={value}

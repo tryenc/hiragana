@@ -1,17 +1,17 @@
-import ri from "../audio/ri.mp3"
-import mi from "../audio/mi.mp3"
-import hi from "../audio/hi.mp3"
-import ni from "../audio/ni.mp3"
-import chi from "../audio/chi.mp3"
-import shi from "../audio/shi.mp3"
-import ki from "../audio/ki.mp3"
-import i from "../audio/i.mp3"
+import り from "../assets/pronunciation/り.mp3"
+import み from "../assets/pronunciation/み.mp3"
+import ひ from "../assets/pronunciation/ひ.mp3"
+import に from "../assets/pronunciation/に.mp3"
+import ち from "../assets/pronunciation/ち.mp3"
+import し from "../assets/pronunciation/し.mp3"
+import き from "../assets/pronunciation/き.mp3"
+import い from "../assets/pronunciation/い.mp3"
 
 const index = 3
 
 export const rowI = [
   {
-    audioPath: ri,
+    audioPath: り,
     character: "り",
     gridPosition: {
       "landscape-primary": {
@@ -23,7 +23,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: mi,
+    audioPath: み,
     character: "み",
     gridPosition: {
       "landscape-primary": {
@@ -35,7 +35,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: hi,
+    audioPath: ひ,
     character: "ひ",
     gridPosition: {
       "landscape-primary": {
@@ -47,7 +47,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: ni,
+    audioPath: に,
     character: "に",
     gridPosition: {
       "landscape-primary": {
@@ -59,7 +59,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: chi,
+    audioPath: ち,
     character: "ち",
     gridPosition: {
       "landscape-primary": {
@@ -71,7 +71,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: shi,
+    audioPath: し,
     character: "し",
     gridPosition: {
       "landscape-primary": {
@@ -83,7 +83,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: ki,
+    audioPath: き,
     character: "き",
     gridPosition: {
       "landscape-primary": {
@@ -95,7 +95,7 @@ export const rowI = [
     }
   },
   {
-    audioPath: i,
+    audioPath: い,
     character: "い",
     gridPosition: {
       "landscape-primary": {

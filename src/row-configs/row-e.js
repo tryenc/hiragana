@@ -1,17 +1,17 @@
-import re from "../audio/re.mp3"
-import me from "../audio/me.mp3"
-import he from "../audio/he.mp3"
-import ne from "../audio/ne.mp3"
-import te from "../audio/te.mp3"
-import se from "../audio/se.mp3"
-import ke from "../audio/ke.mp3"
-import e from "../audio/e.mp3"
+import れ from "../assets/pronunciation/れ.mp3"
+import め from "../assets/pronunciation/め.mp3"
+import へ from "../assets/pronunciation/へ.mp3"
+import ね from "../assets/pronunciation/ね.mp3"
+import て from "../assets/pronunciation/て.mp3"
+import せ from "../assets/pronunciation/せ.mp3"
+import け from "../assets/pronunciation/け.mp3"
+import え from "../assets/pronunciation/え.mp3"
 
 const index = 5
 
 export const rowE = [
   {
-    audioPath: re,
+    audioPath: れ,
     character: "れ",
     gridPosition: {
       "landscape-primary": { gridArea: `${index} / 3` },
@@ -21,7 +21,7 @@ export const rowE = [
     }
   },
   {
-    audioPath: me,
+    audioPath: め,
     character: "め",
     gridPosition: {
       "landscape-primary": { gridArea: `${index} / 5` },
@@ -31,7 +31,7 @@ export const rowE = [
     }
   },
   {
-    audioPath: he,
+    audioPath: へ,
     character: "へ",
     gridPosition: {
       "landscape-primary": { gridArea: `${index} / 6` },
@@ -41,7 +41,7 @@ export const rowE = [
     }
   },
   {
-    audioPath: ne,
+    audioPath: ね,
     character: "ね",
     gridPosition: {
       "landscape-primary": { gridArea: `${index} / 7` },
@@ -51,7 +51,7 @@ export const rowE = [
     }
   },
   {
-    audioPath: te,
+    audioPath: て,
     character: "て",
     gridPosition: {
       "landscape-primary": { gridArea: `${index} / 8` },
@@ -61,7 +61,7 @@ export const rowE = [
     }
   },
   {
-    audioPath: se,
+    audioPath: せ,
     character: "せ",
     gridPosition: {
       "landscape-primary": { gridArea: `${index} / 9` },
@@ -71,7 +71,7 @@ export const rowE = [
     }
   },
   {
-    audioPath: ke,
+    audioPath: け,
     character: "け",
     gridPosition: {
       "landscape-primary": { gridArea: `${index} / 10` },
@@ -81,7 +81,7 @@ export const rowE = [
     }
   },
   {
-    audioPath: e,
+    audioPath: え,
     character: "え",
     gridPosition: {
       "landscape-primary": { gridArea: `${index} / 11` },

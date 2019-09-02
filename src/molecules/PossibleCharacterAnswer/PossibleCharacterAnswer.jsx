@@ -15,7 +15,7 @@ function computeGuessedClasses(isCorrect) {
   }
 }
 
-export const PossibleAnswer = ({
+export const PossibleCharacterAnswer = ({
   isCorrect,
   onClick: parentOnClick = () => {},
   setGuessed,
