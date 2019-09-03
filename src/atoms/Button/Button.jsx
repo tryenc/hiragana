@@ -12,12 +12,29 @@ export const Button = ({
   value,
   style: parentStyle
 }) => {
+  /**
+   * A `dblclick` event occurs after two `click` events.
+   */
+  let timeoutRefArr = []
+
+  function handleClick(e) {
+    const timeoutRef = setTimeout(() => {
+      onClick(e)
+      timeoutRefArr = []
+    }, 250)
+    timeoutRefArr.push(timeoutRef)
+  }
+
+  function handleDoubleClick(e) {
+    timeoutRefArr.forEach(timeoutRef => clearTimeout(timeoutRef))
+    onDoubleClick(e)
+  }
   return (
     <button
       className={classnames(buttonClasses, parentClassName)}
       style={parentStyle}
-      onClick={onClick}
-      onDoubleClick={onDoubleClick}
+      onClick={handleClick}
+      onDoubleClick={handleDoubleClick}
       value={value}
     >
       {children}

@@ -17,29 +17,40 @@ function computeGuessedClasses(isCorrect) {
   }
 }
 
-export const PossibleCharacterAnswer = ({ isCorrect, setGuessed, value }) => {
+export const PossiblePronunciationAnswer = ({
+  isCorrect,
+  setGuessed,
+  value
+}) => {
   const guessedClasses = computeGuessedClasses(isCorrect)
   const valueAudioPath = pronunciations[value]
 
   useEffect(() => {
     if (isCorrect === true) {
-      playAudio(correct).then(() => playAudio(valueAudioPath))
+      playAudio(correct)
     } else if (isCorrect === false) {
-      playAudio(incorrect).then(() => playAudio(valueAudioPath))
+      playAudio(incorrect)
     }
   }, [isCorrect, valueAudioPath])
 
   function handleClick(e) {
+    playAudio(valueAudioPath)
+  }
+
+  function handleDoubleClick(e) {
     if (isCorrect === undefined) {
       setGuessed(e)
-    } else {
-      playAudio(valueAudioPath)
     }
   }
 
   return (
-    <Button className={guessedClasses} onClick={handleClick} value={value}>
-      {value}
+    <Button
+      className={guessedClasses}
+      onClick={handleClick}
+      onDoubleClick={handleDoubleClick}
+      value={value}
+    >
+      {isCorrect === true || isCorrect === false ? value : "Play"}
     </Button>
   )
 }
