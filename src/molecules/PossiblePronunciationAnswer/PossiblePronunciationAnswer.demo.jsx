@@ -12,8 +12,8 @@ function computeIsCorrect(correctAnswer, guessed, value) {
 
 export const CorrectExample = () => {
   const [guessed, _setGuessed] = useState([])
-  function setGuessed(e) {
-    _setGuessed([e.target.value, ...guessed])
+  const setGuessed = value => {
+    _setGuessed([value, ...guessed])
   }
   const value = "あ"
   const correctAnswer = "あ"
@@ -29,8 +29,8 @@ export const CorrectExample = () => {
 
 export const IncorrectExample = () => {
   const [guessed, _setGuessed] = useState([])
-  function setGuessed(e) {
-    _setGuessed([e.target.value, ...guessed])
+  const setGuessed = value => {
+    _setGuessed([value, ...guessed])
   }
   const value = "と"
   const correctAnswer = "あ"

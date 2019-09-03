@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Button } from "../../atoms/Button/Button"
+import { TileButton } from "../../molecules/TileButton/TileButton"
 import { playAudio } from "../../js/playAudio"
 import correct from "../../assets/sfx/correct.wav"
 import incorrect from "../../assets/sfx/incorrect.wav"
@@ -29,17 +29,17 @@ export const PossibleCharacterAnswer = ({ isCorrect, setGuessed, value }) => {
     }
   }, [isCorrect, valueAudioPath])
 
-  function handleClick(e) {
+  const handleClick = () => {
     if (isCorrect === undefined) {
-      setGuessed(e)
+      setGuessed(value)
     } else {
       playAudio(valueAudioPath)
     }
   }
 
   return (
-    <Button className={guessedClasses} onClick={handleClick} value={value}>
+    <TileButton className={guessedClasses} onClick={handleClick} value={value}>
       {value}
-    </Button>
+    </TileButton>
   )
 }

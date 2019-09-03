@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Button } from "../../atoms/Button/Button"
+import { TileButton } from "../../molecules/TileButton/TileButton"
 import { playAudio } from "../../js/playAudio"
 import * as pronunciations from "../../assets/pronunciation/index"
 
@@ -14,5 +14,5 @@ export const PronunciationToMatch = ({ value }) => {
     playAudio(valueAudioPath)
   }
 
-  return <Button onClick={handleClick}>Play</Button>
+  return <TileButton onClick={handleClick}>Play</TileButton>
 }
