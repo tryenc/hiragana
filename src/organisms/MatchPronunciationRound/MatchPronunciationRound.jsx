@@ -22,10 +22,10 @@ export const MatchPronunciationRound = ({
     _setGuessedValues([value, ...guessedValues])
   }
 
-  // const resetGuessedValues = () => {
-  //   _setGuessedValues([])
-  //   resetRound()
-  // }
+  const resetGuessedValues = () => {
+    _setGuessedValues([])
+    resetRound()
+  }
 
   return (
     <div className="h-full w-full flex flex-col">
