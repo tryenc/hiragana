@@ -1,11 +1,15 @@
 import React, { useEffect } from "react"
+
 import { TileButton } from "../../molecules/TileButton/TileButton"
-import { playAudio } from "../../js/playAudio"
+import { playAudio } from "../../js/helpers"
 import * as pronunciations from "../../assets/pronunciation/index"
 
-export const PronunciationToMatch = ({ value }) => {
+export const PronunciationToMatch = ({ className: parentClassName, value }) => {
   const valueAudioPath = pronunciations[value]
 
+  /**
+   * Play the pronunciation when the component first loads
+   */
   useEffect(() => {
     playAudio(valueAudioPath)
   }, [value, valueAudioPath])
@@ -14,5 +18,9 @@ export const PronunciationToMatch = ({ value }) => {
     playAudio(valueAudioPath)
   }
 
-  return <TileButton onClick={handleClick}>Play</TileButton>
+  return (
+    <TileButton className={parentClassName} onClick={handleClick}>
+      Play
+    </TileButton>
+  )
 }

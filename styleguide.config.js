@@ -9,6 +9,11 @@ module.exports = {
       name: "Molecules",
       components: "src/molecules/**/*.{jsx,tsx}",
       ignore: "src/molecules/**/*.demo.{jsx,tsx}"
+    },
+    {
+      name: "Organisms",
+      components: "src/organisms/**/*.{jsx,tsx}",
+      ignore: "src/organisms/**/*.demo.{jsx,tsx}"
     }
   ]
 }

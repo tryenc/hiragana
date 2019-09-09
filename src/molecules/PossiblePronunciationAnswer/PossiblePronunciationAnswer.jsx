@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { TileButton } from "../../molecules/TileButton/TileButton"
-import { playAudio } from "../../js/playAudio"
+import { playAudio } from "../../js/helpers"
 import correct from "../../assets/sfx/correct.wav"
 import incorrect from "../../assets/sfx/incorrect.wav"
 import * as pronunciations from "../../assets/pronunciation/index"
