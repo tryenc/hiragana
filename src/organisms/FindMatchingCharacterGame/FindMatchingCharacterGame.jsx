@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import characters from "../../assets/characters"
-import { Round } from "../MatchSoundToCharacterRound/MatchSoundToCharacterRound"
+import { FindMatchingCharacterRound } from "../FindMatchingCharacterRound/FindMatchingCharacterRound"
 
 function getRandomIndex(max) {
   return Math.floor(Math.random() * Math.floor(max))
@@ -34,7 +34,7 @@ function createPossibleAnswers(chars, qty) {
   })
 }
 
-export const MatchSoundToCharacterGame = () => {
+export const FindMatchingCharacterGame = () => {
   const numAnswersToDisplay = 4
   const [possibleAnswers, setPossibleAnswers] = useState(
     createPossibleAnswers(characters, numAnswersToDisplay)
@@ -43,5 +43,10 @@ export const MatchSoundToCharacterGame = () => {
     setPossibleAnswers(createPossibleAnswers(characters, numAnswersToDisplay))
   }
 
-  return <Round possibleAnswers={possibleAnswers} reset={reset} />
+  return (
+    <FindMatchingCharacterRound
+      possibleAnswers={possibleAnswers}
+      reset={reset}
+    />
+  )
 }

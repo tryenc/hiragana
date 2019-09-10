@@ -10,7 +10,7 @@ import * as pronunciations from "../../assets/pronunciation/index"
  * hiragana character. The user must select the character that
  * corresponds to the pronunciation.
  */
-export const MatchSoundToCharacterRound = ({
+export const FindMatchingCharacterRound = ({
   possibleAnswers = [],
   reset = () => {}
 }) => {

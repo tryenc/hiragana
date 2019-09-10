@@ -1,4 +1,4 @@
-A `MatchSoundToCharacterRound` of `MatchSoundToCharacterGame`. (Psst, the third character is the correct answer.)
+A `FindMatchingCharacterRound` of `FindMatchingCharacterGame`. (Psst, the third character is the correct answer.)
 ```jsx
 const possibleAnswers = [
   {
@@ -27,8 +27,8 @@ const possibleAnswers = [
   }
 ];
 
-<MatchSoundToCharacterRound
+<FindMatchingCharacterRound
   possibleAnswers={possibleAnswers}
-  reset={() => {alert('reset will be handled by MatchSoundToCharacterGame')}}
+  reset={() => {alert('reset will be handled by FindMatchingCharacterGame')}}
 />
 ```
