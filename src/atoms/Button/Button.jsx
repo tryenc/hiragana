@@ -1,5 +1,9 @@
 import React from "react"
 
+/**
+ * A simple HTML button with the ability to handle a `dblclick`
+ * event without having to react to a `click` event twice.
+ */
 export const Button = ({
   children,
   className: parentClassName,

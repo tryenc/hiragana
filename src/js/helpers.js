@@ -1,3 +1,6 @@
+import correct from "../assets/sfx/correct.wav"
+import incorrect from "../assets/sfx/incorrect.wav"
+
 /**
  * Computes whether a value is the correct answer, the incorrect answer,
  * or neither if it hasn't been guessed yet.
@@ -23,4 +26,12 @@ export function playAudio(audioPath) {
     })
     pronunciation.play()
   })
+}
+
+export function playCorrect() {
+  return playAudio(correct)
+}
+
+export function playIncorrect() {
+  return playAudio(incorrect)
 }
