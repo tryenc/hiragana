@@ -2,7 +2,7 @@ import React from "react"
 import classnames from "classnames"
 
 const tileClasses =
-  "m-2 bg-white py-2 px-2 border border-gray-400 rounded shadow-md inline-block"
+  "m-2 bg-white py-2 px-2 border border-gray-400 rounded shadow-md inline-block text-center"
 
 /**
  * A styled HTML `span` with a `display` of `inline-block`.

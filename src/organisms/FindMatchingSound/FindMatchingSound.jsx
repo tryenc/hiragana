@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react"
 import classnames from "classnames"
 import { TileButton } from "../../molecules/TileButton/TileButton"
+import { Tile } from "../../atoms/Tile/Tile"
 import { playAudio, playCorrect, playIncorrect } from "../../js/helpers"
 import * as pronunciations from "../../assets/pronunciation/index"
 
 /**
  * This component represent a single "round" of the guessing game.
- * The user is presented with an audio clip of the pronunciation of a
- * hiragana character. The user must select the character that
- * corresponds to the pronunciation.
+ * The user is presented with a hiragana character. The user must select
+ * the pronunciation that matches that character.
  */
-export const FindMatchingCharacterRound = ({
+export const FindMatchingSound = ({
   possibleAnswers = [],
   reset = () => {}
 }) => {
@@ -86,19 +86,14 @@ export const FindMatchingCharacterRound = ({
   return (
     <div className="h-full w-full flex flex-col">
       <div className="flex-grow flex justify-center">
-        {/* Plays the pronunciation that the user must match */}
-        <TileButton
-          className="flex-grow"
-          onClick={() => playPronunciation(correctAnswer.character)}
-          value={correctAnswer.character}
-        >
-          Play
-        </TileButton>
+        {/* The character whose pronunciation the user must match */}
+        <Tile className="flex-grow">{correctAnswer.character}</Tile>
       </div>
       <div className="flex-grow flex justify-around">
         {possibleAnswers.map(({ character }) => {
+          const wasGuessed = guessedValues.includes(character)
           return (
-            /** Possible matching characters */
+            /** Possible matching pronunciations */
             <TileButton
               className={classnames(
                 "flex-grow",
@@ -109,11 +104,12 @@ export const FindMatchingCharacterRound = ({
                 )
               )}
               key={character}
-              onClick={() => {
+              onClick={() => playPronunciation(character)}
+              onDoubleClick={() => {
                 handleGuess(character)
               }}
             >
-              {character}
+              {wasGuessed ? character : "Play"}
             </TileButton>
           )
         })}
