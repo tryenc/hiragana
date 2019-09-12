@@ -7,10 +7,11 @@ export const TileButton = ({
   className: parentClassName,
   onClick = () => {},
   onDoubleClick = () => {},
+  style: parentStyle,
   value
 }) => {
   return (
-    <Tile className={parentClassName}>
+    <Tile className={parentClassName} style={parentStyle}>
       <Button
         className="focus:outline-none font-semibold w-full h-full"
         onClick={onClick}

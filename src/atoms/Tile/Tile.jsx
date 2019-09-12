@@ -7,8 +7,17 @@ const tileClasses =
 /**
  * A styled HTML `span` with a `display` of `inline-block`.
  */
-export const Tile = ({ children, className: parentClassName }) => {
+export const Tile = ({
+  children,
+  className: parentClassName,
+  style: parentStyle
+}) => {
   return (
-    <span className={classnames(tileClasses, parentClassName)}>{children}</span>
+    <span
+      style={parentStyle}
+      className={classnames(tileClasses, parentClassName)}
+    >
+      {children}
+    </span>
   )
 }

@@ -139,10 +139,10 @@ export default {
     startsWith: "∅-",
     endsWith: "-E"
   },
-  // "ん": {
-  //   startsWith: '-',
-  //   endsWith: '-'
-  // },
+  ん: {
+    startsWith: "N",
+    endsWith: "-A"
+  },
   わ: {
     startsWith: "W-",
     endsWith: "-A"
