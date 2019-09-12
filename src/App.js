@@ -4,9 +4,9 @@ import React, { Suspense, lazy } from "react"
 import { Header } from "./Header"
 
 const Table = lazy(() => import("./pages/Table"))
-const MatchSoundToCharacter = lazy(() =>
-  import("./pages/MatchSoundToCharacter")
-)
+// const MatchSoundToCharacter = lazy(() =>
+//   import("./pages/MatchSoundToCharacter")
+// )
 
 const App = () => {
   return (
@@ -15,10 +15,6 @@ const App = () => {
         <Header />
         <Switch>
           <Route exact path="/" component={Table} />
-          <Route
-            path="/match-sound-to-character"
-            component={MatchSoundToCharacter}
-          />
         </Switch>
       </Suspense>
     </Router>
