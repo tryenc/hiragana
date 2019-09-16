@@ -1,5 +1,6 @@
 import correct from "../assets/sfx/correct.wav"
 import incorrect from "../assets/sfx/incorrect.wav"
+import * as pronunciations from "../assets/pronunciation/index"
 
 /**
  * Computes whether a value is the correct answer, the incorrect answer,
@@ -34,4 +35,10 @@ export function playCorrect() {
 
 export function playIncorrect() {
   return playAudio(incorrect)
+}
+
+export function playPronunciation(character) {
+  const pronunciation = pronunciations[character]
+
+  return playAudio(pronunciation)
 }

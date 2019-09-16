@@ -1,9 +1,12 @@
 import React from "react"
 import characters from "../../assets/characters"
-import { playAudio } from "../../js/helpers"
-import * as pronunciations from "../../assets/pronunciation/index"
+import { playPronunciation } from "../../helpers/index.js"
 import { TileButton } from "../../molecules/TileButton/TileButton"
-import getGridPosition from "./getGridPosition"
+import {
+  getCharacterGridPosition,
+  getSoundGridPosition
+} from "./getGridPosition"
+import sounds from "./sounds"
 
 const gridStyle = {
   "landscape-primary": {
@@ -18,22 +21,31 @@ const gridStyle = {
   }
 }
 
-export const Reference = ({ orientation }) => {
-  const handleClick = character => {
-    const pronunciation = pronunciations[character]
-
-    return playAudio(pronunciation)
-  }
+/**
+ * A chart that organizes the hiragana characters according to the sound that
+ * they start and end with.
+ */
+export const HiraganaChart = ({ orientation }) => {
   return (
     <div style={gridStyle[orientation]}>
+      {sounds.map(sound => {
+        const style = {
+          gridArea: getSoundGridPosition(sound, orientation)
+        }
+        return (
+          <span className="m-auto" key={sound} style={style}>
+            {sound}
+          </span>
+        )
+      })}
       {characters.map(character => {
         const style = {
-          gridArea: getGridPosition(character, orientation)
+          gridArea: getCharacterGridPosition(character, orientation)
         }
         return (
           <TileButton
             key={character}
-            onClick={() => handleClick(character)}
+            onClick={() => playPronunciation(character)}
             style={style}
           >
             {character}

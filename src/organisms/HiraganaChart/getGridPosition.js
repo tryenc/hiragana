@@ -8,7 +8,7 @@ import soundGridPosition from "./soundGridPosition"
  * @param {string} character a hiragana character
  * @param {string} orientation the orientation of the device, either 'portrait' or 'landscape'
  */
-export default function getGridPosition(character, orientation) {
+export function getCharacterGridPosition(character, orientation) {
   const { startsWith, endsWith } = pronunciation[character]
   let row, column
 
@@ -19,6 +19,12 @@ export default function getGridPosition(character, orientation) {
     row = soundGridPosition[startsWith][orientation].row
     column = soundGridPosition[endsWith][orientation].column
   }
+
+  return `${row} / ${column}`
+}
+
+export function getSoundGridPosition(sound, orientation) {
+  const { row, column } = soundGridPosition[sound][orientation]
 
   return `${row} / ${column}`
 }

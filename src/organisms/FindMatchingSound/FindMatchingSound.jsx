@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react"
 import classnames from "classnames"
 import { TileButton } from "../../molecules/TileButton/TileButton"
 import { Tile } from "../../atoms/Tile/Tile"
-import { playAudio, playCorrect, playIncorrect } from "../../js/helpers"
-import * as pronunciations from "../../assets/pronunciation/index"
+import { playCorrect, playIncorrect, playPronunciation } from "../../helpers"
 
 /**
  * This component represent a single "round" of the guessing game.
@@ -63,15 +62,6 @@ export const FindMatchingSound = ({
     } else {
       playIncorrect().then(() => playPronunciation(character))
     }
-  }
-
-  /**
-   * Plays the pronunciation of a character.
-   */
-  const playPronunciation = character => {
-    const pronunciation = pronunciations[character]
-
-    return playAudio(pronunciation)
   }
 
   /**
