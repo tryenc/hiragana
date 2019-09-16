@@ -42,5 +42,7 @@ export const Game = ({ children }) => {
     setPossibleAnswers(createPossibleAnswers(characters, numAnswersToDisplay))
   }
 
-  return <div>{children(possibleAnswers, reset)}</div>
+  return (
+    <div className="p-4 w-full h-full">{children(possibleAnswers, reset)}</div>
+  )
 }

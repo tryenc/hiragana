@@ -1,22 +1,45 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import React, { Suspense, lazy } from "react"
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import React from "react"
+import { withOrientation } from "./HOCs/withOrientation"
+import { Header } from "./molecules/Header/Header"
+import { FindMatchingCharacter } from "./organisms/FindMatchingCharacter/FindMatchingCharacter"
+import { FindMatchingSound } from "./organisms/FindMatchingSound/FindMatchingSound"
+import { Game } from "./organisms/Game/Game"
+import { HiraganaChart } from "./organisms/HiraganaChart/HiraganaChart"
 
-import { Header } from "./Header"
-
-const Table = lazy(() => import("./pages/Table"))
-// const MatchSoundToCharacter = lazy(() =>
-//   import("./pages/MatchSoundToCharacter")
-// )
+const HiraganaChartWithOrientation = withOrientation(HiraganaChart)
+const FindMatchingCharacterGame = () => (
+  <Game>
+    {(possibleAnswers, reset) => (
+      <FindMatchingCharacter possibleAnswers={possibleAnswers} reset={reset} />
+    )}
+  </Game>
+)
+const FindMatchingSoundGame = () => (
+  <Game>
+    {(possibleAnswers, reset) => (
+      <FindMatchingSound possibleAnswers={possibleAnswers} reset={reset} />
+    )}
+  </Game>
+)
 
 const App = () => {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <div className="w-screen h-screen flex flex-col">
         <Header />
-        <Switch>
-          <Route exact path="/" component={Table} />
-        </Switch>
-      </Suspense>
+        <Route exact path="/" component={HiraganaChartWithOrientation} />
+        <Route
+          exact
+          path="/find-matching-character"
+          component={FindMatchingCharacterGame}
+        />
+        <Route
+          exact
+          path="/find-matching-pronunciation"
+          component={FindMatchingSoundGame}
+        />
+      </div>
     </Router>
   )
 }
