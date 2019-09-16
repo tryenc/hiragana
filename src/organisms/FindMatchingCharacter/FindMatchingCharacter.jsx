@@ -78,20 +78,20 @@ export const FindMatchingCharacter = ({
       <div className="flex-grow flex justify-center">
         {/* Plays the pronunciation that the user must match */}
         <TileButton
-          className="flex-grow"
+          className="w-1/6"
           onClick={() => playPronunciation(correctAnswer.character)}
           value={correctAnswer.character}
         >
           Play
         </TileButton>
       </div>
-      <div className="flex-grow flex justify-around">
+      <div className="flex-grow flex flex-wrap justify-around">
         {possibleAnswers.map(({ character }) => {
           return (
             /** Possible matching characters */
             <TileButton
               className={classnames(
-                "flex-grow",
+                "w-1/6",
                 computeGuessedClasses(
                   correctAnswer.character,
                   guessedValues,

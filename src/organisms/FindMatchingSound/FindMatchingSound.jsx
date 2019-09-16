@@ -77,16 +77,16 @@ export const FindMatchingSound = ({
     <div className="h-full w-full flex flex-col">
       <div className="flex-grow flex justify-center">
         {/* The character whose pronunciation the user must match */}
-        <Tile className="flex-grow">{correctAnswer.character}</Tile>
+        <Tile className="w-1/6">{correctAnswer.character}</Tile>
       </div>
-      <div className="flex-grow flex justify-around">
+      <div className="flex-grow flex flex-wrap justify-around">
         {possibleAnswers.map(({ character }) => {
           const wasGuessed = guessedValues.includes(character)
           return (
             /** Possible matching pronunciations */
             <TileButton
               className={classnames(
-                "flex-grow",
+                "w-1/6",
                 computeGuessedClasses(
                   correctAnswer.character,
                   guessedValues,

@@ -2,7 +2,7 @@ import React from "react"
 import classnames from "classnames"
 
 const tileClasses =
-  "m-2 bg-white py-2 px-2 border border-gray-400 rounded shadow-md inline-block text-center"
+  "m-2 bg-white py-2 px-2 border border-gray-400 rounded shadow-md flex justify-center items-center"
 
 /**
  * A styled HTML `span` with a `display` of `inline-block`.
@@ -13,11 +13,11 @@ export const Tile = ({
   style: parentStyle
 }) => {
   return (
-    <span
+    <div
       style={parentStyle}
       className={classnames(tileClasses, parentClassName)}
     >
       {children}
-    </span>
+    </div>
   )
 }
