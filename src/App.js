@@ -1,13 +1,11 @@
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import React from "react"
-import { withOrientation } from "./HOCs/withOrientation"
 import { Header } from "./molecules/Header/Header"
 import { FindMatchingCharacter } from "./organisms/FindMatchingCharacter/FindMatchingCharacter"
 import { FindMatchingSound } from "./organisms/FindMatchingSound/FindMatchingSound"
 import { Game } from "./organisms/Game/Game"
 import { HiraganaChart } from "./organisms/HiraganaChart/HiraganaChart"
 
-const HiraganaChartWithOrientation = withOrientation(HiraganaChart)
 const FindMatchingCharacterGame = () => (
   <Game>
     {(possibleAnswers, reset) => (
@@ -28,7 +26,7 @@ const App = () => {
     <Router>
       <div className="w-screen h-screen flex flex-col">
         <Header />
-        <Route exact path="/" component={HiraganaChartWithOrientation} />
+        <Route exact path="/" component={HiraganaChart} />
         <Route
           exact
           path="/find-matching-character"

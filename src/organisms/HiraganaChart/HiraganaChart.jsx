@@ -7,6 +7,7 @@ import {
   getSoundGridPosition
 } from "./getGridPosition"
 import sounds from "./sounds"
+import { useOrientation } from "../../hooks/useOrientation/useOrientation"
 
 const gridStyle = {
   "landscape-primary": {
@@ -25,7 +26,8 @@ const gridStyle = {
  * A chart that organizes the hiragana characters according to the sound that
  * they start and end with.
  */
-export const HiraganaChart = ({ orientation }) => {
+export const HiraganaChart = () => {
+  const orientation = useOrientation()
   return (
     <div style={gridStyle[orientation]}>
       {sounds.map(sound => {
