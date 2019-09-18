@@ -35,9 +35,13 @@ export function getGuessedClasses(wasCorrectlyGuessed) {
 export function playAudio(audioPath) {
   const pronunciation = new Audio(audioPath)
   return new Promise(resolve => {
-    pronunciation.addEventListener("ended", () => {
-      resolve()
-    })
+    pronunciation.addEventListener(
+      "ended",
+      () => {
+        resolve()
+      },
+      { once: true } // The once option removes the listener after it's been invoked
+    )
     pronunciation.play()
   })
 }
