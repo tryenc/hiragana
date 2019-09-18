@@ -1,7 +1,44 @@
 import React, { useEffect, useState } from "react"
 import classnames from "classnames"
 import { TileButton } from "../../molecules/TileButton/TileButton"
-import { playCorrect, playIncorrect, playPronunciation } from "../../helpers"
+import {
+  computeWasCorrectlyGuessed,
+  getGuessedClasses,
+  playCorrect,
+  playIncorrect,
+  playPronunciation
+} from "../../helpers"
+
+/**
+ * A character that is possibly the correct answer.
+ */
+const PossibleCharacterAnswer = ({
+  character,
+  handleClick = () => {},
+  wasCorrectlyGuessed
+}) => {
+  let guessedClasses = getGuessedClasses(wasCorrectlyGuessed)
+
+  return (
+    <TileButton
+      className={classnames("w-1/6", guessedClasses)}
+      onClick={handleClick}
+    >
+      {character}
+    </TileButton>
+  )
+}
+
+/**
+ * The pronunciation whose character you have to match.
+ */
+const PronunciationToMatch = ({ character, handleClick = () => {} }) => {
+  return (
+    <TileButton className="w-1/6" onClick={handleClick} value={character}>
+      Play
+    </TileButton>
+  )
+}
 
 /**
  * This component represent a single "round" of the guessing game.
@@ -19,31 +56,12 @@ export const FindMatchingCharacter = ({
   )
 
   /**
-   * Resets the `guessedValues` whenever a new round begins (i.e. `possibleAnswers` has been updated).
+   * Resets the `guessedValues` whenever a new round begins. In other words, the prop,
+   * `possibleAnswers`, has been updated by the parent component.
    */
   useEffect(() => {
     _setGuessedValues([])
   }, [possibleAnswers])
-
-  /**
-   * Determines if a character was guessed and, if so, if it's the
-   * correct answer. It returns classes accordingly.
-   * @param {string} correctAnswerCharacter
-   * @param {string[]} guessedValues
-   * @param {string} character
-   */
-  function computeGuessedClasses(
-    correctAnswerCharacter,
-    guessedValues,
-    character
-  ) {
-    if (guessedValues.includes(character)) {
-      if (character === correctAnswerCharacter) {
-        return "text-white bg-green-500"
-      }
-      return "text-white bg-red-600"
-    }
-  }
 
   /**
    * Handles when a guess is made by taking the following actions
@@ -76,35 +94,24 @@ export const FindMatchingCharacter = ({
   return (
     <div className="h-full w-full flex flex-col">
       <div className="flex-grow flex justify-center">
-        {/* Plays the pronunciation that the user must match */}
-        <TileButton
-          className="w-1/6"
-          onClick={() => playPronunciation(correctAnswer.character)}
-          value={correctAnswer.character}
-        >
-          Play
-        </TileButton>
+        <PronunciationToMatch
+          character={correctAnswer.character}
+          handleClick={() => playPronunciation(correctAnswer.character)}
+        />
       </div>
       <div className="flex-grow flex flex-wrap justify-around">
         {possibleAnswers.map(({ character }) => {
           return (
-            /** Possible matching characters */
-            <TileButton
-              className={classnames(
-                "w-1/6",
-                computeGuessedClasses(
-                  correctAnswer.character,
-                  guessedValues,
-                  character
-                )
-              )}
+            <PossibleCharacterAnswer
+              character={character}
+              handleClick={() => handleGuess(character)}
               key={character}
-              onClick={() => {
-                handleGuess(character)
-              }}
-            >
-              {character}
-            </TileButton>
+              wasCorrectlyGuessed={computeWasCorrectlyGuessed(
+                correctAnswer.character,
+                guessedValues,
+                character
+              )}
+            />
           )
         })}
       </div>

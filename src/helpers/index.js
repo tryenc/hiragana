@@ -10,12 +10,25 @@ import * as pronunciations from "../assets/pronunciation/index"
  * @param {string[]} guessedValues values which have already been guessed
  * @param {string} value the value whose "correctness" we're computing
  */
-export function computeIsCorrect(correctAnswer, guessedValues, value) {
+export function computeWasCorrectlyGuessed(
+  correctAnswer,
+  guessedValues,
+  value
+) {
   if (guessedValues.includes(value)) {
     if (value === correctAnswer) {
       return true
     }
     return false
+  }
+}
+
+export function getGuessedClasses(wasCorrectlyGuessed) {
+  if (wasCorrectlyGuessed === true) {
+    return "text-white bg-green-500"
+  }
+  if (wasCorrectlyGuessed === false) {
+    return "text-white bg-red-600"
   }
 }
 

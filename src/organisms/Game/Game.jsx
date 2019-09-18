@@ -34,7 +34,7 @@ function createPossibleAnswers(chars, qty) {
 }
 
 export const Game = ({ children }) => {
-  const numAnswersToDisplay = 4
+  const numAnswersToDisplay = 12
   const [possibleAnswers, setPossibleAnswers] = useState(
     createPossibleAnswers(characters, numAnswersToDisplay)
   )

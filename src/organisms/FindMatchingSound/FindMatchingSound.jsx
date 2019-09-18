@@ -13,11 +13,14 @@ export const FindMatchingSound = ({
   possibleAnswers = [],
   reset = () => {}
 }) => {
+  // Same
   const [guessedValues, _setGuessedValues] = useState([])
+  // Same
   const correctAnswer = possibleAnswers.find(
     possibleAnswer => possibleAnswer.isCorrect
   )
 
+  // Same
   /**
    * Resets the `guessedValues` whenever a new round begins (i.e. `possibleAnswers` has been updated).
    */
@@ -25,6 +28,7 @@ export const FindMatchingSound = ({
     _setGuessedValues([])
   }, [possibleAnswers])
 
+  // Same
   /**
    * Determines if a character was guessed and, if so, if it's the
    * correct answer. It returns classes accordingly.
@@ -45,6 +49,7 @@ export const FindMatchingSound = ({
     }
   }
 
+  // Same
   /**
    * Handles when a guess is made by taking the following actions
    * 1. updates the `guessedValues`
@@ -64,6 +69,7 @@ export const FindMatchingSound = ({
     }
   }
 
+  // Same
   /**
    * Updates the collection of values that have already been guessed
    * by adding the latest guess.
