@@ -42,10 +42,13 @@ const PronunciationToMatch = ({ character, handleClick = () => {} }) => {
  * corresponds to the pronunciation.
  */
 export const FindMatchingCharacter = ({
-  possibleAnswers = [],
-  reset = () => {}
+  markCorrect = () => {},
+  markIncorrect = () => {},
+  possibleAnswers = []
 }) => (
   <Round
+    markCorrect={markCorrect}
+    markIncorrect={markIncorrect}
     possibleAnswers={possibleAnswers}
     renderTileToMatch={({ character, handleClick }) => (
       <PronunciationToMatch character={character} handleClick={handleClick} />
@@ -61,6 +64,5 @@ export const FindMatchingCharacter = ({
         wasCorrectlyGuessed={wasCorrectlyGuessed}
       />
     )}
-    reset={reset}
   />
 )

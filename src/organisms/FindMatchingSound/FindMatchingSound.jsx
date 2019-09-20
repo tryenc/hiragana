@@ -35,11 +35,14 @@ const PossiblePronunciationAnswer = ({
  * the pronunciation that matches that character.
  */
 export const FindMatchingSound = ({
-  possibleAnswers = [],
-  reset = () => {}
+  markCorrect = () => {},
+  markIncorrect = () => {},
+  possibleAnswers = []
 }) => {
   return (
     <Round
+      markCorrect={markCorrect}
+      markIncorrect={markIncorrect}
       possibleAnswers={possibleAnswers}
       renderTileToMatch={({ character }) => (
         <CharacterToMatch character={character} />
@@ -57,7 +60,6 @@ export const FindMatchingSound = ({
           wasCorrectlyGuessed={wasCorrectlyGuessed}
         />
       )}
-      reset={reset}
     />
   )
 }

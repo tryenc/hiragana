@@ -13,10 +13,11 @@ import {
  * corresponds to the pronunciation.
  */
 export const Round = ({
+  markCorrect = () => {},
+  markIncorrect = () => {},
   possibleAnswers = [],
   renderPossibleTileAnswer = () => {},
-  renderTileToMatch = () => {},
-  reset = () => {}
+  renderTileToMatch = () => {}
 }) => {
   const [guessedValues, _setGuessedValues] = useState([])
   const correctAnswer = possibleAnswers.find(
@@ -32,22 +33,29 @@ export const Round = ({
   }, [possibleAnswers])
 
   /**
-   * Handles when a guess is made by taking the following actions
-   * 1. updates the `guessedValues`
-   * 2. plays the sound effect for a correct or incorrect answer,
-   * based on the accuracy of the guess.
-   * 3. plays the audio for the character's pronunciation
-   * 4. if the guess was correct, it resets the round
+   * Handles when a guess is made by updating the `guessedValues` and
+   * calling either `handleCorrect` or `handleIncorrect` based on the
+   * accuracy of the guess.
    */
   const handleGuess = character => {
     setGuessedValues(character)
     if (character === correctAnswer.character) {
-      playCorrect()
-        .then(() => playPronunciation(character))
-        .then(() => reset())
+      handleCorrect(character)
     } else {
-      playIncorrect().then(() => playPronunciation(character))
+      handleIncorrect(character)
     }
+  }
+
+  const handleCorrect = character => {
+    playCorrect()
+      .then(() => playPronunciation(character))
+      .then(() => markCorrect())
+  }
+
+  const handleIncorrect = character => {
+    playIncorrect()
+      .then(() => playPronunciation(character))
+      .then(() => markIncorrect())
   }
 
   /**

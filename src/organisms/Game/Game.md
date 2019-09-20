@@ -3,8 +3,8 @@
 const FindMatchingCharacter = require('../FindMatchingCharacter/FindMatchingCharacter').FindMatchingCharacter;
 
 <Game>
-  {(possibleAnswers, reset) => (
-    <FindMatchingCharacter possibleAnswers={possibleAnswers} reset={reset}/>
+  {props => (
+    <FindMatchingCharacter {...props}/>
   )}
 </Game>
 ```
@@ -14,8 +14,8 @@ const FindMatchingCharacter = require('../FindMatchingCharacter/FindMatchingChar
 const FindMatchingSound = require('../FindMatchingSound/FindMatchingSound').FindMatchingSound;
 
 <Game>
-  {(possibleAnswers, reset) => (
-    <FindMatchingSound possibleAnswers={possibleAnswers} reset={reset}/>
+  {props => (
+    <FindMatchingSound {...props}/>
   )}
 </Game>
 ```

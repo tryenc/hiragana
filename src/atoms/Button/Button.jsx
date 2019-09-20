@@ -20,7 +20,7 @@ export const Button = ({
     const timeoutRef = setTimeout(() => {
       onClick(e)
       timeoutRefArr = []
-    }, 250)
+    }, 300)
     timeoutRefArr.push(timeoutRef)
   }
 

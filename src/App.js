@@ -7,18 +7,10 @@ import { Game } from "./organisms/Game/Game"
 import { HiraganaChart } from "./organisms/HiraganaChart/HiraganaChart"
 
 const FindMatchingCharacterGame = () => (
-  <Game>
-    {(possibleAnswers, reset) => (
-      <FindMatchingCharacter possibleAnswers={possibleAnswers} reset={reset} />
-    )}
-  </Game>
+  <Game>{props => <FindMatchingCharacter {...props} />}</Game>
 )
 const FindMatchingSoundGame = () => (
-  <Game>
-    {(possibleAnswers, reset) => (
-      <FindMatchingSound possibleAnswers={possibleAnswers} reset={reset} />
-    )}
-  </Game>
+  <Game>{props => <FindMatchingSound {...props} />}</Game>
 )
 
 const App = () => {
