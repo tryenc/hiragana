@@ -31,6 +31,12 @@ export const Round = ({
   useEffect(() => {
     _setGuessedValues([])
   }, [possibleAnswers])
+  /**
+   * Plays the pronunciation to match at the beginning of a new round.
+   */
+  useEffect(() => {
+    playPronunciation(correctAnswer.character)
+  }, [correctAnswer.character])
 
   /**
    * Handles when a guess is made by updating the `guessedValues` and
@@ -38,11 +44,15 @@ export const Round = ({
    * accuracy of the guess.
    */
   const handleGuess = character => {
-    setGuessedValues(character)
-    if (character === correctAnswer.character) {
-      handleCorrect(character)
+    if (!guessedValues.includes(character)) {
+      setGuessedValues(character)
+      if (character === correctAnswer.character) {
+        handleCorrect(character)
+      } else {
+        handleIncorrect(character)
+      }
     } else {
-      handleIncorrect(character)
+      playPronunciation(character)
     }
   }
 
