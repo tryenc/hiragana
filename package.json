@@ -1,6 +1,6 @@
 {
   "name": "hiragana",
-  "homepage": "https://tryenc.github.io",
+  "homepage": "http://learn-hiragana.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,7 @@
     "build": "npm run build:css & react-scripts build",
     "build:css": "postcss src/styles/index.css -o src/index.css",
     "demos": "npm run build:css && styleguidist server --open",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "start": "npm run watch:css & react-scripts start",
