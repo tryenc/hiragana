@@ -3,6 +3,7 @@ import classnames from "classnames"
 import { TileButton } from "../../molecules/TileButton/TileButton"
 import { Round } from "../Round/Round"
 import { getGuessedClasses } from "../../helpers"
+import { ReactComponent as Play } from "../../assets/svg/play-circle.svg"
 
 /**
  * A character that is possibly the correct answer.
@@ -30,7 +31,7 @@ const PossibleCharacterAnswer = ({
 const PronunciationToMatch = ({ character, handleClick = () => {} }) => {
   return (
     <TileButton className="w-1/6" onClick={handleClick} value={character}>
-      Play
+      <Play className="w-16 h-16" alt="play" />
     </TileButton>
   )
 }

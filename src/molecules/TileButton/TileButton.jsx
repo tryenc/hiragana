@@ -13,7 +13,7 @@ export const TileButton = ({
   return (
     <Tile className={parentClassName} style={parentStyle}>
       <Button
-        className="focus:outline-none font-semibold w-full h-full"
+        className="focus:outline-none font-semibold w-full h-full flex justify-center"
         onClick={onClick}
         onDoubleClick={onDoubleClick}
         value={value}
