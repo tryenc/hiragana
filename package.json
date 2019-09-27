@@ -24,7 +24,7 @@
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "start": "npm run watch:css & react-scripts start",
+    "start": "react-scripts start",
     "test": "react-scripts test",
     "watch:css": "postcss src/styles/index.css -o src/index.css -w"
   },
